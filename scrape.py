@@ -2,6 +2,7 @@ import pandas as pd
 import sqlite3 as sqlite
 from bs4 import BeautifulSoup
 import requests
+from datetime import datetime
 
 
 def create_dataframe() -> pd.DataFrame:
@@ -223,6 +224,11 @@ def scrape():
         
 
 if __name__ == '__main__':
+
+    current_time = datetime.now()
+    # Convert to string
+    datetime_string = current_time.strftime('%m-%d-%y %H:%M')
+    print(f"Scraping starting on: {datetime_string}")
    
     # will only create table if it doesn't exist
     create_table()
@@ -233,3 +239,5 @@ if __name__ == '__main__':
     # df = create_dataframe()
     # print(df)
     # export_dataframe_to_csv(df)
+
+    print("Scraping complete")
