@@ -15,7 +15,7 @@ This program scapes monitor data from a retail website and finds the best prices
 Directions for automating script every 12 hours
 - Open terminal 
 - enter: crontab -e
-- enter: 0 */12 * * * <python path> <script path> >> <output_file path>
+- enter: 0 */12 * * * <pythonpath> <scriptpath> >> <output_filepath>
 - save and quit
 
 Verify by typing crontab -l in the terminal
