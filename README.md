@@ -9,7 +9,7 @@ This program scapes monitor data from a retail website and finds the best prices
 
 
 ### Output options:
-- Can display data scraped by printing out database contents, creating pandas dataframe, or running Flask app.
+- Can display data by printing out the database contents, creating pandas dataframe, or displaying webpage.
 
 ### Crontab command:
 Directions for automating script every 12 hours
