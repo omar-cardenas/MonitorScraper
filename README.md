@@ -3,8 +3,8 @@
 This program scapes monitor data from a retail website and finds the best prices for each panel type and resolution.
 
 ## Features
-- scrapes webpage and store data in a SQLite database
-- display data with pandas or through a webpage created with Flask
+- scrapes webpage and stores data in a SQLite database.
+- categorizes and displays data through a webpage, with direct links to purchase items.
 - script is automated using crontab
 
 
