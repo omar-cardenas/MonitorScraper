@@ -1,0 +1,55 @@
+.title{
+    text-align: center;
+}
+
+.product_info{
+    height: 60px;
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+
+.monitor_grid {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;           /* Ensures cards wrap to the next row if needed */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;   /* Centers the cards horizontally */
+}
+.monitor_card{
+    border: 1px solid #ddd;
+    /*border: 1px solid black;*/
+    border-radius: 1rem;
+    padding: 10px;
+    text-align: center;
+    width: 350px;
+    background: white;
+    height: 450px
+}
+
+
+.monitor_card h3 {
+    height: 80px;
+    overflow: hidden;   /* Hide overflow text if it's too long */
+    margin: 20px;
+}
+h3{
+    text-align: center;
+}
+button{
+    cursor: pointer;
+    background: cornflowerblue;
+    padding: 0.5rem;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+
+body{
+    margin-top: 5%;
+    background: lightgray;
+}
+

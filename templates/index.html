@@ -1,0 +1,50 @@
+{%extends 'base.html'%}
+
+{%block head%}
+
+{%endblock%}
+
+{%block body%}
+<h1 class = "title"><b>Best Monitor Deals</b></h1>
+
+   <h3><u>OLED</u></h3>
+
+    <div class = "monitor_grid">
+        {% for monitor in oled_monitors %}
+        <div class = "monitor_card">
+            <h5>{{ monitor.name }}</h5>
+
+            <p>
+                <img src="{{ monitor.image_src }}" alt = {{ monitor.name }} ><br>
+
+            </p>
+              <p class = "product_info">
+                Brand: {{monitor.brand}}<br>
+                Price: {{monitor.price}}<br>
+                  <a href = "{{ monitor.url }}" target = "_blank"><button>Purchase</button> </a>
+            </p>
+
+        </div>
+        {% endfor %}
+    </div>
+
+    <h3><u>LCD</u></h3>
+    <div class = "monitor_grid">
+        {% for monitor in lcd_monitors %}
+        <div class = "monitor_card">
+            <h5>{{ monitor.name }}</h5>
+            <p>
+                Brand: {{ monitor.brand }}<br>
+                Price: {{monitor.price }}
+            </p>
+            <p>
+                <img src="{{ monitor.image_src }}" alt = {{ monitor.name }} ><br>
+                <a href = "{{ monitor.url }}" target = "_blank"><button>Purchase</button> </a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+{%endblock%}
