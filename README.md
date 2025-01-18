@@ -4,8 +4,8 @@ This program scapes monitor data from a retail website and finds the best prices
 
 ## Features
 - scrapes webpage and stores data in a SQLite database.
-- categorizes and displays data through a webpage, with direct links to purchase items.
-- script is automated using crontab
+- categorizes and displays data through a webpage with direct links for purchase.
+- script is automated using crontab to keep information up to date.
 
 
 ### Output options:
