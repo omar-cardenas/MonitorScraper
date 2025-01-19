@@ -7,11 +7,13 @@ This program scapes monitor data from a retail website and finds the best prices
 - categorizes and displays data through a web app with direct links for purchase.
 - script is automated using crontab to keep information up to date.
 
-### Output options:
+### Output options  
+
 - Can display data by printing out the database contents, creating pandas dataframe, or exporting data to a csv file.
 - Can view the two best prices for every panel type and resolution in the Flask web application.
 
-### Crontab command:
+### Crontab command  
+
 Directions for automating script every 12 hours. 
 - Open terminal 
 - enter: crontab -e
