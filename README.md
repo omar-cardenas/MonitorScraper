@@ -2,7 +2,7 @@
 
 This program scapes monitor data from a retail website and finds the best prices for each panel type and resolution.
 
-## Features
+### Features
 ---
 - scrapes webpage and stores data in a SQLite database.
 - categorizes and displays data through a web app with direct links for purchase.
@@ -27,11 +27,11 @@ Verify by typing crontab -l in the terminal
 ---
 Clone the repository: git clone https://github.com/omar-cardenas/MonitorScraper.git
 
-## Technologies Used
+### Technologies Used
 ---
 - **Language**: Python, HTML, CSS
 - **Database**: SQLite
 
-## License
+### License
 ---
 This project is licensed under the MIT License.
