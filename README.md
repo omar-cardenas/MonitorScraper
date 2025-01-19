@@ -9,7 +9,8 @@ This program scapes monitor data from a retail website and finds the best prices
 
 
 ### Output options:
-- Can display data by printing out the database contents, creating pandas dataframe, or displaying webpage.
+- Can display data by printing out the database contents, creating pandas dataframe, and exporting data to a csv file.
+- Can view the two best prices for every panel type and resolution in the Flask web application.
 
 ### Crontab command:
 Directions for automating script every 12 hours
