@@ -6,7 +6,7 @@ This program scapes monitor data from a retail website and finds the best prices
 ---
 - scrapes webpage and stores data in a SQLite database.
 - categorizes and displays data through a web app with direct links for purchase.
-- lets you filter the monitors displayed by resolution and panel type.
+- lets you display monitors by resolution and panel type.
 - script is automated using crontab to keep information up to date.
 
 ### Output options  
@@ -14,10 +14,11 @@ This program scapes monitor data from a retail website and finds the best prices
 - Can print out database contents, create pandas dataframe, or export data to a csv file.
 - Can view the best prices for every panel type and resolution by running the web application.
 
-<img width="800" alt="MonitorScaperUI" src="https://github.com/user-attachments/assets/1a302a8f-bdc6-440e-98e3-7bd4a7c66a79" />
-<img width="800" alt="CSV file" src = "https://github.com/user-attachments/assets/f596f6f4-0216-4bc4-9160-c60796976955" />
+<img width="450" height='450'  alt="Web app" src="https://github.com/user-attachments/assets/9bf0dba3-4adf-4c12-8bed-0a744abc4418" />
+<img width="450" height='450'  alt="CSV file" src = "https://github.com/user-attachments/assets/f596f6f4-0216-4bc4-9160-c60796976955" />
 
 
+##
 
 
 ### Crontab command  
