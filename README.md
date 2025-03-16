@@ -14,8 +14,8 @@ This program scapes monitor data from a retail website and finds the best prices
 - Can print out database contents, create pandas dataframe, or export data to a csv file.
 - Can view the best prices for every panel type and resolution by running the web application.
 
-<img width="450" height='450'  alt="Web app" src="https://github.com/user-attachments/assets/9bf0dba3-4adf-4c12-8bed-0a744abc4418" />
-<img width="450" height='450'  alt="CSV file" src = "https://github.com/user-attachments/assets/f596f6f4-0216-4bc4-9160-c60796976955" />
+<img width="800"  alt="Web app" src="https://github.com/user-attachments/assets/9bf0dba3-4adf-4c12-8bed-0a744abc4418" />
+<img width="800"  alt="CSV file" src = "https://github.com/user-attachments/assets/f596f6f4-0216-4bc4-9160-c60796976955" />
 
 
 ##
