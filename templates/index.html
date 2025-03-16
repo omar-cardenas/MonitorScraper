@@ -1,50 +1,61 @@
-{%extends 'base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        <meta charset="UTF-8">
+<!--        <link rel="stylesheet" href="../static/css/main.css" ></link>-->
+<!--        <script defer src="../static/js/script.js"></script>-->
+        <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <title>Best Monitor Prices</title>
+    </head>
+    <body>
+        <header>
+            <h1 class = "title"><a href="/" ><b>Current Monitor Deals</b></a></h1>
+            <nav>
+                    <div class="dropdown">
+                        <span class="nav-item">OLED</span>
+                        <div class="dropdown-content">
+<!--                            putting a '/' in the begining of the url makes it an absolute path, which avoids relative paths nesting-->
+                            <a href="/display/OLED/1440">1440p</a>
+                            <a href="/display/OLED/2160">4K</a>
+                        </div>
+                    </div>
 
-{%block head%}
+                    <div class="dropdown">
+                        <span class="nav-item">LCD</span>
+                        <div class="dropdown-content">
+                            <a href="/display/LCD/1080">1080p</a>
+                            <a href="/display/LCD/1440">1440p</a>
+                            <a href="/display/LCD/2160">4K</a>
+                        </div>
+                    </div>
+            </nav>
+        </header>
 
-{%endblock%}
+        <main>
+<!--            <h3>OLED</h3>-->
 
-{%block body%}
-<h1 class = "title"><b>Current Monitor Deals</b></h1>
+            <div class = "monitor_grid">
+                {% for monitor in monitors %}
+                <div class = "monitor_card">
+                    <h5>{{ monitor.name }}</h5>
 
-   <h3><u>OLED</u></h3>
+                    <p>
+                        <img src="{{ monitor.image_src }}" alt = {{ monitor.name }} ><br>
 
-    <div class = "monitor_grid">
-        {% for monitor in oled_monitors %}
-        <div class = "monitor_card">
-            <h5>{{ monitor.name }}</h5>
+                    </p>
+                      <p class = "product_info">
+                        Brand: {{monitor.brand}}<br>
+                        Price: {{monitor.price}}<br>
+                          <a href = "{{ monitor.url }}" target = "_blank"><button>Purchase</button> </a>
+                    </p>
 
-            <p>
-                <img src="{{ monitor.image_src }}" alt = {{ monitor.name }} ><br>
+                </div>
+                {% endfor %}
+            </div>
 
-            </p>
-              <p class = "product_info">
-                Brand: {{monitor.brand}}<br>
-                Price: {{monitor.price}}<br>
-                  <a href = "{{ monitor.url }}" target = "_blank"><button>Purchase</button> </a>
-            </p>
+        </main>
+    </body>
+</html>
 
-        </div>
-        {% endfor %}
-    </div>
-
-    <h3><u>LCD</u></h3>
-    <div class = "monitor_grid">
-        {% for monitor in lcd_monitors %}
-        <div class = "monitor_card">
-            <h5>{{ monitor.name }}</h5>
-            <p>
-                Brand: {{ monitor.brand }}<br>
-                Price: {{monitor.price }}
-            </p>
-            <p>
-                <img src="{{ monitor.image_src }}" alt = {{ monitor.name }} ><br>
-                <a href = "{{ monitor.url }}" target = "_blank"><button>Purchase</button> </a>
-            </p>
-        </div>
-        {% endfor %}
-    </div>
-
-
-
-{%endblock%}

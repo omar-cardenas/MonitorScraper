@@ -17,14 +17,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    oled_monitors = get_oled()
-    lcd_monitors = get_LCD()
+    monitors = fetchMonitors()
+    print(monitors)
 
-    print(oled_monitors)
-    print(lcd_monitors)
+    return render_template('index.html', monitors = monitors)
+@app.route('/display/<type>/<resolution>')
+def display(type, resolution):
+    print(type, resolution)
+    monitors = fetchMonitors(type, resolution)
+    print(monitors)
 
-    return render_template('index.html', oled_monitors = oled_monitors, lcd_monitors = lcd_monitors)
-
+    return render_template('index.html', monitors = monitors)
 
 def get_monitors_result(sql: str) -> list[Monitor]:
     db = sqlite3.connect("monitors.db")
@@ -39,21 +42,20 @@ def get_monitors_result(sql: str) -> list[Monitor]:
     db.close()
     return monitors
 
+def fetchMonitors(type=None, resolution = None) -> list[Monitor]:
+    monitors = None
+    if type and resolution:
+        print("running fetch with parameters")
+        sql = f"SELECT * from monitors WHERE RESOLUTION = '{resolution}' AND PANEL_TYPE = '{type}' ORDER BY PRICE;"
+        monitors = get_monitors_result(sql)
+    else:
+        sql = 'SELECT * from monitors ORDER BY PRICE;'
+        monitors = get_monitors_result(sql)
+    if len(monitors) >= 8:
+        monitors = monitors[0:8]
 
-def get_oled() -> list[Monitor]:
+    return monitors
 
-    qhd_monitors = get_monitors_result("SELECT * FROM monitors WHERE RESOLUTION = '1440' AND PANEL_TYPE = 'OLED' ORDER BY PRICE;")
-    uhd_monitors = get_monitors_result("SELECT * FROM monitors WHERE RESOLUTION = '2160' AND PANEL_TYPE = 'OLED' ORDER BY PRICE;")
-    oled_monitors = [qhd_monitors[0], qhd_monitors[1], uhd_monitors[0], uhd_monitors[1]]
-    return oled_monitors
-
-def get_LCD() -> list[Monitor]:
-
-    fhd_monitors = get_monitors_result("SELECT * FROM monitors WHERE RESOLUTION = '1080' AND PANEL_TYPE = 'LCD' ORDER BY PRICE;")
-    qhd_monitors = get_monitors_result("SELECT * FROM monitors WHERE RESOLUTION = '1440' AND PANEL_TYPE = 'LCD' ORDER BY PRICE;")
-    uhd_monitors = get_monitors_result("SELECT * FROM monitors WHERE RESOLUTION = '2160' AND PANEL_TYPE = 'LCD' ORDER BY PRICE;")
-    lcd_monitors = [fhd_monitors[0],fhd_monitors[1], qhd_monitors[0], qhd_monitors[1], uhd_monitors[0], uhd_monitors[1]]
-    return lcd_monitors
 
 
 

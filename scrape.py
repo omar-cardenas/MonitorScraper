@@ -232,10 +232,10 @@ if __name__ == '__main__':
    
     # will only create table if it doesn't exist
     create_table()
-    scrape()
+    #scrape()
     
     #OPTIONS TO DISPLAY DATA
-    # db_print_table()
+    db_print_table()
     # df = create_dataframe()
     # print(df)
     # export_dataframe_to_csv(df)
